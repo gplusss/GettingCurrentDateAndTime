@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="udK-tn-Ime">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Q9w-06-QI5">
+            <objects>
+                <viewController id="W03-Bu-ZyE" customClass="ViewController" customModule="GettingCurrentDateAndTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2d2-gp-kiO"/>
+                        <viewControllerLayoutGuide type="bottom" id="3vH-nT-o1l"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D7L-uo-pdw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydF-OJ-5Fb">
+                                <rect key="frame" x="20" y="284" width="560" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="71F-nB-AB3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ec6-Bi-8LQ">
+                                <rect key="frame" x="274" y="367" width="53" height="30"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="refreshNSDateButton:" destination="W03-Bu-ZyE" eventType="touchUpInside" id="oHe-tn-e3C"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Date And Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQt-A5-lmP">
+                                <rect key="frame" x="128" y="195" width="345" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="345" id="Wbi-im-rud"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ydF-OJ-5Fb" firstAttribute="centerX" secondItem="XQt-A5-lmP" secondAttribute="centerX" id="1Kb-IM-cSs"/>
+                            <constraint firstItem="Ec6-Bi-8LQ" firstAttribute="top" secondItem="ydF-OJ-5Fb" secondAttribute="bottom" constant="38" id="HVl-II-Sda"/>
+                            <constraint firstItem="ydF-OJ-5Fb" firstAttribute="top" secondItem="D7L-uo-pdw" secondAttribute="top" constant="284" id="I48-1w-5fI"/>
+                            <constraint firstItem="ydF-OJ-5Fb" firstAttribute="top" secondItem="XQt-A5-lmP" secondAttribute="bottom" constant="41" id="IMY-g5-Sfc"/>
+                            <constraint firstItem="XQt-A5-lmP" firstAttribute="centerX" secondItem="D7L-uo-pdw" secondAttribute="centerX" id="Km2-aI-RgH"/>
+                            <constraint firstItem="XQt-A5-lmP" firstAttribute="top" secondItem="2d2-gp-kiO" secondAttribute="bottom" constant="131" id="L6X-ex-cB4"/>
+                            <constraint firstItem="ydF-OJ-5Fb" firstAttribute="top" secondItem="XQt-A5-lmP" secondAttribute="bottom" constant="41" id="LrP-50-F5S"/>
+                            <constraint firstItem="ydF-OJ-5Fb" firstAttribute="centerX" secondItem="Ec6-Bi-8LQ" secondAttribute="centerX" id="PvN-Sz-yqh"/>
+                            <constraint firstItem="ydF-OJ-5Fb" firstAttribute="leading" secondItem="D7L-uo-pdw" secondAttribute="leadingMargin" id="SDo-7E-cQM"/>
+                            <constraint firstItem="ydF-OJ-5Fb" firstAttribute="top" secondItem="XQt-A5-lmP" secondAttribute="top" id="xR5-i7-fB6"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="LrP-50-F5S"/>
+                                <exclude reference="xR5-i7-fB6"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="Wes-QN-OuF"/>
+                    <connections>
+                        <outlet property="currentDateAndTimeLabel" destination="ydF-OJ-5Fb" id="1zv-pt-3FH"/>
+                        <outlet property="refreshButton" destination="Ec6-Bi-8LQ" id="JIi-5V-bYT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ds-Ma-dmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1115" y="382"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8B8-lb-eC6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="udK-tn-Ime" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nWj-dY-DSk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="W03-Bu-ZyE" kind="relationship" relationship="rootViewController" id="o8i-Li-xQf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="coV-bb-sav" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="303" y="382"/>
+        </scene>
+    </scenes>
+</document>
