@@ -15,27 +15,34 @@ class ViewController: UIViewController {
     @IBOutlet weak var currentDateAndTimeLabel: UILabel!
     
     let date = NSDate()
+    let calendar = NSCalendar.currentCalendar()
+    
+
     
     @IBOutlet weak var refreshButton: UIButton!
     @IBAction func refreshNSDateButton(sender: AnyObject) {
-        //currentDateAndTimeLabel.text = String(date)
+        updateNSDate()
+        view.reloadInputViews()
     }
     
-    func timeNowString() -> NSString {
+    
+    func updateNSDate() {
+        //currentDateAndTimeLabel.text = String(date)
         
+        currentDateAndTimeLabel.text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .LongStyle)
+
+        print((currentDateAndTimeLabel.text!))
         
-        let outputFormat = NSDateFormatter()
-        outputFormat.locale = NSLocale(localeIdentifier:"en_US")
-        outputFormat.dateFormat = "HH:mm:ss"
-        let timeString = outputFormat.stringFromDate(date)
-        return timeString;
     }
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentDateAndTimeLabel.text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .MediumStyle, timeStyle: .LongStyle)
 
-         currentDateAndTimeLabel.text = timeNowString() as String
+        
+
         
     }
 
